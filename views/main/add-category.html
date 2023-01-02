@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{template "general/header"}} 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+<title>Kanban App</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        container: {
+          center: true,
+          padding: '2rem',
+          width: '100%',
+        },
+        table: {},
+      },
+      variants: {
+        extend: {
+          backgroundColor: ['even'],
+        },
+      },
+    };
+  </script>
+<style>
+  .group:hover .group-hover\:flex {
+    display: flex !important;
+  }
+</style>
+
+</head>
+<body>
+    <!-- beginanswer -->
+    <div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
+        <div class="px-8 py-6 mt-4 text-left  bg-[#F3EACB] shadow-lg">
+            <a href="/dashboard">
+                <!-- <button class="bg-white rounded-lg mb-3">Back to Dashboard</button> -->
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                      </svg>
+                </button>
+            </a>
+            <h3 class="text-2xl font-bold text-center text-[#704214]">Add Category</h3>
+            <form method="POST" action="/category/create">
+                <div class="mt-4">
+                    <div>
+                        <label class="block" for="type">Title<label>
+                        <input type="text" placeholder="Title" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-400 bg-slate-100" name="type" required>
+                    </div>
+                    <div class="flex items-baseline justify-end">
+                        <button type="submit"  class="px-3 py-2 mt-5 text-white text-lg font-semibold  bg-yellow-400 rounded-lg hover:bg-yellow-500">Add Category</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- endanswer -->
+</body>
+</html>
